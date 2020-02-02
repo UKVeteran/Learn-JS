@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Learn JavaScript | Zenva.com</title>
+  </head>
+  <body>
+    <h2>Tell me a story</h2>
+    <div id="feedbackArea"></div>
+    <form id="storyForm">
+        <div>
+            Your name: <input id="name" type="text" />
+        </div>
+        <div>
+            Your story: <textarea id="story"></textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+    <script>
+        window.addEventListener('load', function(){
+            var form = document.getElementById('storyForm');
+            form.addEventListener('submit', function(event){
+                //page not to refresh
+                event.preventDefault();
+
+                //salute
+                var name = document.getElementById('name').value;
+
+                document.getElementById('feedbackArea').innerHTML = 'hello ' + name;
+            });
+        });
+
+    </script>
+  </body>
